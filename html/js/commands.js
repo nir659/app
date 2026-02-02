@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const commands = {
     pgp: () => {
       window.open("/GAhbMNZYJv.txt", "_blank");
-      return "Redirecting";
     },
     status: () => {
       window.open("https://status.nir.rip", "_blank");
@@ -109,10 +108,12 @@ Data & Services         Observability
       ? commands[sanitizedCommand]()
       : "Command not found. Try 'ls' for available commands.";
 
-    const output = document.createElement("div");
-    output.className = "terminal-line";
-    output.innerHTML = result.replace(/\n/g, "<br>");
-    commandOutput.appendChild(output);
+    if (result != null) {
+      const output = document.createElement("div");
+      output.className = "terminal-line";
+      output.innerHTML = result.replace(/\n/g, "<br>");
+      commandOutput.appendChild(output);
+    }
     createInputLine();
 
     commandOutput.scrollTop = commandOutput.scrollHeight;
