@@ -10,10 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
       window.open("https://status.nir.rip", "_blank");
     },
     about: () => `I'm like a computer, but mostly for useless information.
-This is a personal lab for things I run and occasionally document. 
 I care about computers, astronomy, and music.
 I like understanding systems by breaking them, then rebuilding them properly.
-Nothing here is a product, roadmap, or promise. If you want something, ask.`,
+If you want something, ask.`,
     contact: () => `matrix: @nir:matrix.nir.rip | email: nir@nir.rip | discord: n.ir | github: @nir659`,
     lab: () => {
       window.open("https://lab.nir.rip/", "_blank");
