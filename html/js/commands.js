@@ -1,51 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('cmd') === 'services') {
+    handleCommand('services');
+  }
+  
   const commandOutput = document.getElementById("command-output");
   let activeInput = null;
 
   const commands = {
-    pgp: () => {
-      window.open("/GAhbMNZYJv.txt", "_blank");
+    p: () => {
+      window.open("https://p.nir.rip", "_blank");
+      return "Opening <a href='https://p.nir.rip' class='cmd-link' target='_blank'>p.nir.rip</a>...";
     },
     status: () => {
       window.open("https://status.nir.rip", "_blank");
+      return "Checking <a href='https://status.nir.rip' class='cmd-link' target='_blank'>system status</a>...";
     },
-    about: () => `I'm like a computer, but mostly for useless information.
-I care about computers, astronomy, and music.
-I like understanding systems by breaking them, then rebuilding them properly.
-If you want something, ask.`,
-    contact: () => `matrix: @nir:matrix.nir.rip | email: nir@nir.rip | discord: n.ir | github: @nir659`,
     lab: () => {
       window.open("https://lab.nir.rip/", "_blank");
+      return "Accessing <a href='https://lab.nir.rip/' class='cmd-link' target='_blank'>Lab & Research</a>...";
     },
-    ls: () => `Type a command to get started:
-contact  - Contact me
-services - Services I run
-lab      - Docs and research
-pgp      - PGP public key
-status   - Status page
-secwet   - ...?`,
-services: () => `=================== Public Services ===================
-nir.rip     - Personal lab and index
-lab.nir.rip - Writeups, notes, and experiments
-status      - Public uptime for exposed services
-matrix      - Self-hosted messaging
-mail        - Self-hosted email (SMTP/IMAP)
-play        - Personal Minecraft server
-======================= Homelab =======================
-Networking & Edge       Compute & Storage
-- OpenWRT               - Proxmox / PBS
-- Pi-hole               - TrueNAS
-- Wireguard
-Data & Services         Observability
-- PostgreSQL            - Prometheus
-- Vaultwarden           - Grafana
-- Jellyfin               - Loki
-- Arr stack
-`,
-    secwet: () =>
+
+    about:
+      () => `I enjoy computers, astronomy, dabble in math/physics. I tend to learn by doing, and share what I learn.
+matrix: <a href="https://matrix.to/#/@nir:matrix.nir.rip" class="cmd-link">@nir:matrix.nir.rip</a> | email: <a href="mailto:ly@nir.rip" class="cmd-link">ly@nir.rip</a> | github: <a href="https://github.com/nir659" class="cmd-link">@nir659</a>`,
+
+    ls: () => `Type or click a command to navigate:
+<a href="https://p.nir.rip" class="cmd-link" target="_blank">p</a>        - Portfolio
+<a href="https://nir.rip/services" class="cmd-link">services</a> - Services I run
+<a href="https://lab.nir.rip" class="cmd-link" target="_blank">lab</a>      - Docs and research
+<a href="https://status.nir.rip" class="cmd-link" target="_blank">status</a>   - Status page`,
+
+    services: () => `nir.rip/
+├── <a href="https://nir.rip" class="cmd-link">nir.rip</a>           # Personal lab and index
+├── <a href="https://lab.nir.rip" class="cmd-link" target="_blank">lab.nir.rip</a>       # Writeups, notes, and research
+├── <a href="https://status.nir.rip" class="cmd-link" target="_blank">status.nir.rip</a>    # Public uptime for exposed services
+├── <a href="https://matrix.nir.rip" class="cmd-link" target="_blank">matrix.nir.rip</a>    # Self-hosted messaging
+└── <a href="https://mail.nir.rip" class="cmd-link" target="_blank">mail.nir.rip</a>      # Self-hosted email (SMTP/IMAP)`,
+
+    secret: () =>
       "V2hhdCBhcmUgeW91IGRvaW5nIGhlcmUhIFUybHVZMlVnZVc5MUozSmxJSE52SUhCbGNuTnBjM1JsYm5RZ2ZpQm9kSFJ3Y3pvdkwzQmhjM1JsWW1sdUxtTnZiUzl5WVhjdldHZFZSR2hqUzFBPQ==",
   };
-
   function createInputLine() {
     if (activeInput) {
       const promptSpan = activeInput.previousElementSibling;
@@ -53,7 +49,10 @@ Data & Services         Observability
         const staticPrompt = document.createElement("div");
         staticPrompt.className = "terminal-line";
         staticPrompt.textContent = "guest@nir:~$ ";
-        promptSpan.parentElement.parentNode.replaceChild(staticPrompt, promptSpan.parentElement);
+        promptSpan.parentElement.parentNode.replaceChild(
+          staticPrompt,
+          promptSpan.parentElement,
+        );
       }
     }
 

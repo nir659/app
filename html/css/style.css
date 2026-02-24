@@ -4,7 +4,7 @@
   --primary-color: rgb(50, 0, 59);
   --secondary-color: #6a0dad;
   --text-color: #ffffff;
-  --bg-color: #00000060;
+  --bg-color: #00000070;
   --border-color: #6a0dad;
 }
 
@@ -26,18 +26,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  font-size: 24px;
-  z-index: 9999;
-  cursor: pointer;
 }
 
 .container {
@@ -71,7 +59,7 @@ body {
 .terminal-line,
 .terminal-prompt,
 #command-input {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .terminal-line {
@@ -91,6 +79,16 @@ body {
   background: var(--secondary-color);
   padding: 10px 15px;
   position: relative;
+}
+
+/* Make links look like terminal text */
+.cmd-link {
+  color: inherit;       /* Use the terminal's text color */
+  text-decoration: none; /* Remove the underline */
+  cursor: pointer;      /* Optional: keep pointer or change to 'text' */
+}
+.cmd-link:hover {
+  text-decoration: underline; /* Optional: visual feedback for humans */
 }
 
 .title {

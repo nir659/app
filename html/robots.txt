@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nir.rip/sitemap-index.xml
