@@ -17,26 +17,30 @@ document.addEventListener("DOMContentLoaded", () => {
       window.open("https://status.nir.rip", "_blank");
       return "Checking <a href='https://status.nir.rip' class='cmd-link' target='_blank'>system status</a>...";
     },
-    lab: () => {
+    blog: () => {
       window.open("https://lab.nir.rip/", "_blank");
-      return "Accessing <a href='https://lab.nir.rip/' class='cmd-link' target='_blank'>Lab & Research</a>...";
+      return "Accessing <a href='https://lab.nir.rip/' class='cmd-link' target='_blank'>Blog & Writeups</a>...";
+    },
+    pgp: () => {
+      window.open("/GAhbMNZYJv.txt", "_blank");
+      return "Fetching <a href='/GAhbMNZYJv.txt' class='cmd-link' target='_blank'>PGP public key</a>...";
     },
 
     about:
       () => `I enjoy computers, astronomy, dabble in math/physics. I tend to learn by doing, and share what I learn.
-matrix: <a href="https://matrix.to/#/@nir:matrix.nir.rip" class="cmd-link">@nir:matrix.nir.rip</a> | email: <a href="mailto:ly@nir.rip" class="cmd-link">ly@nir.rip</a> | github: <a href="https://github.com/nir659" class="cmd-link">@nir659</a>`,
+email: <a href="mailto:ly@nir.rip" class="cmd-link">ly@nir.rip</a> | github: <a href="https://github.com/nir659" class="cmd-link">@nir659</a>`,
 
     ls: () => `Type or click a command to navigate:
 <a href="https://p.nir.rip" class="cmd-link" target="_blank">p</a>        - Portfolio
-<a href="https://nir.rip/services" class="cmd-link">services</a> - Services I run
-<a href="https://lab.nir.rip" class="cmd-link" target="_blank">lab</a>      - Docs and research
+services - Services I run
+<a href="https://lab.nir.rip" class="cmd-link" target="_blank">blog</a>     - Writeups and notes
+<a href="/GAhbMNZYJv.txt" class="cmd-link" target="_blank">pgp</a>      - PGP public key
 <a href="https://status.nir.rip" class="cmd-link" target="_blank">status</a>   - Status page`,
 
     services: () => `nir.rip/
 ├── <a href="https://nir.rip" class="cmd-link">nir.rip</a>           # Personal lab and index
-├── <a href="https://lab.nir.rip" class="cmd-link" target="_blank">lab.nir.rip</a>       # Writeups, notes, and research
+├── <a href="https://lab.nir.rip" class="cmd-link" target="_blank">lab.nir.rip</a>       # Blog: writeups and notes
 ├── <a href="https://status.nir.rip" class="cmd-link" target="_blank">status.nir.rip</a>    # Public uptime for exposed services
-├── <a href="https://matrix.nir.rip" class="cmd-link" target="_blank">matrix.nir.rip</a>    # Self-hosted messaging
 └── <a href="https://mail.nir.rip" class="cmd-link" target="_blank">mail.nir.rip</a>      # Self-hosted email (SMTP/IMAP)`,
 
     secret: () =>
