@@ -9,10 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeInput = null;
 
   const commands = {
-    p: () => {
-      window.open("https://p.nir.rip", "_blank");
-      return "Opening <a href='https://p.nir.rip' class='cmd-link' target='_blank'>p.nir.rip</a>...";
-    },
     status: () => {
       window.open("https://status.nir.rip", "_blank");
       return "Checking <a href='https://status.nir.rip' class='cmd-link' target='_blank'>system status</a>...";
@@ -31,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 email: <a href="mailto:ly@nir.rip" class="cmd-link">ly@nir.rip</a> | github: <a href="https://github.com/nir659" class="cmd-link">@nir659</a>`,
 
     ls: () => `Type or click a command to navigate:
-<a href="https://p.nir.rip" class="cmd-link" target="_blank">p</a>        - Portfolio
 services - Services I run
 <a href="https://lab.nir.rip" class="cmd-link" target="_blank">blog</a>     - Writeups and notes
 <a href="/GAhbMNZYJv.txt" class="cmd-link" target="_blank">pgp</a>      - PGP public key
